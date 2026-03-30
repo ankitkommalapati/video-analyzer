@@ -1,6 +1,11 @@
 const User = require("../user/user.model");
+require("../role/role.model");
+require("../organization/org.model");
+
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+
+
 
 exports.register = async ({ name, email, password, organization, role }) => {
   const hashedPassword = await bcrypt.hash(password, 10);
