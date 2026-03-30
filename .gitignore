@@ -30,3 +30,5 @@ vite.config.ts.timestamp-*
 *.swo
 package-lock.json
 yarn.lock
+uploads/
+**/uploads/
