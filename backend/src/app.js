@@ -6,6 +6,8 @@ const authMiddleware = require("./middleware/auth.middleware");
 
 const videoRoutes = require("./modules/video/video.routes");
 
+const errorMiddleware = require("./middleware/error.middleware");
+
 const app = express();
 
 app.use(cors());
@@ -20,4 +22,5 @@ app.get("/", (req, res) => {
   res.send("API is running...");
 });
 
+app.use(errorMiddleware);
 module.exports = app;
