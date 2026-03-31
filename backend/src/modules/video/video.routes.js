@@ -12,4 +12,10 @@ router.post(
   videoController.uploadVideo
 );
 
+router.get(
+    "/:id/stream",
+    checkRole("admin", "editor", "viewer"),
+    videoController.stream
+  );
+
 module.exports = router;
