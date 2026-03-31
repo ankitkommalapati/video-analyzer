@@ -16,6 +16,12 @@ router.get(
     "/:id/stream",
     checkRole("admin", "editor", "viewer"),
     videoController.stream
-  );
+);
+
+router.get(
+    "/",
+    checkRole("admin", "editor", "viewer"),
+    videoController.getVideos
+);
 
 module.exports = router;

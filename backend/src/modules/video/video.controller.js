@@ -46,3 +46,16 @@ exports.stream = async (req, res) => {
       res.status(500).json({ error: err.message });
     }
   };
+
+  exports.getVideos = async (req, res) => {
+    try {
+      const videos = await videoService.getVideos({
+        user: req.user,
+        query: req.query,
+      });
+  
+      res.json(videos);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  };
